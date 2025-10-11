@@ -41,10 +41,10 @@ const en = {
   latestNewsTitle: "Latest News",
   latestVideoTitle: "Latest Video",
   latestNews: [
-    { date: "2025-09-01", content: "'God's Calling feat. Chis-A' has been released." },
-    { date: "2025-10-11", content: "Homepage published." },
-    { date: "2025-10-26", content: "Scheduled to exhibit at M3 [E-02a], a music & media mix doujin event!" }
-    //,{ date: "2025-11-29", content: "Scheduled to exhibit at THE VOC@LOiD M@STER 61 [F08], a Vocaloid-only event!" }
+    { date: "2025/09/01", content: "'God's Calling feat. Chis-A' has been released." },
+    { date: "2025/10/11", content: "Homepage published." },
+    { date: "2025/10/26", content: "Scheduled to exhibit at M3 [E-02a], a music & media mix doujin event!" }
+    //,{ date: "2025/11/29", content: "Scheduled to exhibit at THE VOC@LOiD M@STER 61 [F08], a Vocaloid-only event!" }
   ],
   navButtons: [
     { label: "Home", link: "/", icon: "fa-solid fa-house" },

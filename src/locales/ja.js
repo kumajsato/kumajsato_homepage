@@ -41,10 +41,10 @@ const ja = {
   latestNewsTitle: "最新情報",
   latestVideoTitle: "最新動画",
   latestNews: [
-    { date: "2025-09-01", content: "『カミサマコーリング feat. 知声』公開しました" }
-    ,{ date: "2025-10-11", content: "ホームページを公開しました" }
-    ,{ date: "2025-10-26", content: "音系・メディアミックス同人即売会 [M3]<strong>【E-02a】</strong>にて出展予定" }
-    //,{ date: "2025-11-29", content: "ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！" }
+    { date: "2025/09/01", content: "『カミサマコーリング feat. 知声』公開しました" }
+    ,{ date: "2025/10/11", content: "ホームページを公開しました" }
+    ,{ date: "2025/10/26", content: "音系・メディアミックス同人即売会 [M3]<strong>【E-02a】</strong>にて出展予定" }
+    //,{ date: "2025/11/29", content: "ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！" }
   ],
   navButtons: [
     { label: "ホーム", link: "/", icon: "fa-solid fa-house" }
