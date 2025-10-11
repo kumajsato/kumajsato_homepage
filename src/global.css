@@ -264,7 +264,6 @@ section {
   outline-offset: 2px;
 }
 
-/*
 @media (prefers-color-scheme: dark) {
   body {
     background: #222;
@@ -304,4 +303,3 @@ section {
     outline-offset: 2px;
   }
 }
-*/
