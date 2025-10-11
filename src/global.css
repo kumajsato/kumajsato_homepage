@@ -36,7 +36,7 @@ body {
   gap: 24px;
   justify-content: center;
   align-items: stretch;
-  margin-bottom: 32px;
+  margin-bottom: 5%;
 }
 .youtube-video {
   max-width: 500px;
@@ -59,7 +59,6 @@ body {
 .youtube-video iframe {
   width: 100%;
   height: 280px;
-  border-radius: 8px;
   border: none;
   background: #000;
 }
@@ -120,7 +119,6 @@ footer {
 
 section, main {
   width: 100%;
-  padding: 0 0 2% 0;
   margin: 0 auto;
   max-width: 1024px;
   box-sizing: border-box;
@@ -128,6 +126,7 @@ section, main {
 }
 
 section {
+  padding: 0 0.5% 3% 0.5%;
   border: 1.5px solid #e0e0e0;
   box-shadow: none;
 }
@@ -185,8 +184,6 @@ section {
   width: 100%;
   padding: 0 2.5%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px #eee;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -203,7 +200,7 @@ section {
 
 @media (max-width: 1000px) {
   section, main {
-    padding: 0 3.5%;
+
   }
   .external-link-box {
     flex-basis: 45%; /* 2列 */
@@ -267,7 +264,7 @@ section {
   outline-offset: 2px;
 }
 
-
+/*
 @media (prefers-color-scheme: dark) {
   body {
     background: #222;
@@ -307,3 +304,4 @@ section {
     outline-offset: 2px;
   }
 }
+*/
