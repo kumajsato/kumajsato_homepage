@@ -46,7 +46,6 @@ const ja = {
     ,{ date: "2025-10-26", content: "音系・メディアミックス同人即売会 [M3]<strong>【E-02a】</strong>にて出展予定" }
     //,{ date: "2025-11-29", content: "ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！" }
   ],
-  navigationTitle: "ナビゲーション",
   navButtons: [
     { label: "ホーム", link: "/", icon: "fa-solid fa-house" }
     ,{ label: "コンテンツ", link: "/contents", icon: "fa-solid fa-film" }

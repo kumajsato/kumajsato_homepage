@@ -46,7 +46,6 @@ const en = {
     { date: "2025-10-26", content: "Scheduled to exhibit at M3 [E-02a], a music & media mix doujin event!" }
     //,{ date: "2025-11-29", content: "Scheduled to exhibit at THE VOC@LOiD M@STER 61 [F08], a Vocaloid-only event!" }
   ],
-  navigationTitle: "Navigation",
   navButtons: [
     { label: "Home", link: "/", icon: "fa-solid fa-house" },
     { label: "Contents", link: "/contents", icon: "fa-solid fa-film" },
