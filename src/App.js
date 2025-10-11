@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./components/Home";
+import Contents from "./components/Contents";
+import AboutMe from "./components/AboutMe";
+import Links from "./components/Links";
+import ja from "./locales/ja";
+import en from "./locales/en";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  const isJapanese = navigator.language.startsWith("ja");
+  const texts = isJapanese ? ja : en;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home texts={texts} />} />
+        <Route path="/contents" element={<Contents texts={texts}/>} />
+        <Route path="/aboutme" element={<AboutMe texts={texts} />} />
+        <Route path="/links" element={<Links texts={texts} />} />
+      </Routes>
+    </Router>
   );
 }
 
