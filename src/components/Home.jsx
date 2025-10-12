@@ -102,7 +102,7 @@ export default function Home({ texts }) {
             ></iframe>
             <div style={{ marginTop: 8, textAlign: 'center' }}>
               <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{videos[videos.length-1].title}</div>
-              <div className="text-sm text-gray-500">{videos[videos.length-1].date} / {videos[videos.length-1].genre.join(", ")}</div>
+              <div className="text-sm text-gray-500">{videos[videos.length-1].date} | {videos[videos.length-1].genre.join(", ")}</div>
             </div>
           </div>
         </div>
