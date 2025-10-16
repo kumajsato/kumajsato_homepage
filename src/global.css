@@ -36,7 +36,7 @@ body {
   gap: 24px;
   justify-content: center;
   align-items: stretch;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 .youtube-video {
   max-width: 500px;
@@ -125,9 +125,17 @@ section, main {
   font-size: 90%;
 }
 
+main{
+  padding: 0 0.5% 1% 0.5%;
+  border-right: 1.5px solid #e0e0e0;
+  border-left: 1.5px solid #e0e0e0;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+
 section {
-  padding: 0 0.5% 3% 0.5%;
-  border: 1.5px solid #e0e0e0;
+  padding: 0 0 0 0;
+  border-top: 1.5px solid #e0e0e0;
+  /*border-bottom: 1.5px solid #e0e0e0;*/
   box-shadow: none;
 }
 
@@ -198,6 +206,15 @@ section {
     color: #444;
 }
 
+a {
+  color: #1976d2;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #ea5320;
+}
+
 @media (max-width: 1000px) {
   section, main {
 
@@ -254,13 +271,13 @@ section {
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .genre-toggle-btn.active {
-  background: #ff9800;
+  background: #ea5320;
   color: #fff;
-  border-color: #ff9800;
+  border-color: #ea5320;
 }
 
 .genre-toggle-btn:focus {
-  outline: 2px solid #ff9800;
+  outline: 2px solid #ea5320;
   outline-offset: 2px;
 }
 
@@ -268,6 +285,12 @@ section {
   body {
     background: #222;
     color: #eee;
+  }
+  a {
+    color: #90caf9;
+  }
+  a:hover {
+    color: #ea5320;
   }
   section, main, .external-link-box, footer {
     background: #222;
@@ -299,7 +322,7 @@ section {
     color: #eee;
   }
   .genre-toggle-btn:focus {
-    outline: 2px solid #ff9800;
+    outline: 2px solid #ea5320;
     outline-offset: 2px;
   }
 }

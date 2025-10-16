@@ -10,7 +10,7 @@ const videos = [
     url: "https://www.youtube.com/embed/HQv6P9Ujpzw",
     title: "ユニ feat. 初音ミク, 知声",
     date: "2022/10/09",
-    genre: ["Hip-Hop", "Rap"]
+    genre: ["Hip-Hop"]
   },
   {
     url: "https://www.youtube.com/embed/xCUPh-FGJ1A",
@@ -64,14 +64,22 @@ const videos = [
     url: "https://www.youtube.com/embed/NlkQWj8gtWw",
     title: "アイムタフ！ feat. 知声",
     date: "2025/02/24",
-    genre: ["Hip-Hop", "Rap"]
+    genre: ["Hip-Hop", "Future Bass"]
   },
   {
     url: "https://www.youtube.com/embed/GkPwlH5uRes",
     title: "カミサマコーリング feat. 知声",
     date: "2025/09/01",
-    genre: ["Hip-Hop", "Rap"]
+    genre: ["Hip-Hop", "Future Bass"]
   }
 ];
+
+// ピックアップ動画データ
+export const pickup_video = {
+  url: "https://www.youtube.com/embed/bDXe_quHHzI",
+  title: "【M3秋2025】佐藤くまM3出展情報【E-02a】",
+  date: "2025/10/26",
+  genre: ["出展情報"]
+};
 
 export default videos;

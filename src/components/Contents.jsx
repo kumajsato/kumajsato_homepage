@@ -25,6 +25,7 @@ export default function Contents({ texts }) {
   return (
     <div className="main-container flex flex-col min-h-screen">
       <Header texts={texts} />
+      <main>
       <section className="flex-1 flex flex-col items-center justify-center w-full">
         <h2 className="text-xl font-bold mb-2" style={{ textAlign: 'center' }}>{texts.navButtons[1].label}</h2>
         {/* ジャンル選択ボタン */}
@@ -55,6 +56,7 @@ export default function Contents({ texts }) {
           ))}
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

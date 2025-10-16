@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import videos from "../videos";
+import videos, { pickup_video } from "../videos";
 
 export function Header({ texts }) {
   return (
@@ -71,9 +71,10 @@ export default function Home({ texts }) {
   return (
     <div className="main-container flex flex-col min-h-screen">
       <Header texts={texts} />
+      <main>
       {/* 自己紹介欄 */}
-      <section className="home-intro w-full text-center text-gray-700 mb-8">
-        <p dangerouslySetInnerHTML={{ __html: texts.intro }} />
+      <section className="home-intro w-full text-center text-gray-700 mb-8" style={{ border: 'none' }}>
+        <p dangerouslySetInnerHTML={{ __html: texts.intro }}  style={{ margin: 0, paddingBlockStart: '1em', paddingBlockEnd: '1em' }}/>
       </section>
       {/* 最新情報欄 */}
       <section className="w-full bg-white rounded shadow p-4 mb-8">
@@ -87,6 +88,25 @@ export default function Home({ texts }) {
             </li>
           ))}
         </ul>
+      </section>
+      {/* ピックアップ動画欄 */}
+      <section className="w-full bg-white rounded shadow p-4 mb-8">
+        <h2 className="text-xl font-bold mb-2" style={{ textAlign: 'center' }}>{texts.pickupVideoTitle}</h2>
+        <div className="youtube-wrapper" style={{ justifyContent: 'center' }}>
+          <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }}>
+            <iframe
+              src={pickup_video.url}
+              title={pickup_video.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ width: '100%', height: '280px', borderRadius: '12px', border: 'none' }}
+            ></iframe>
+            <div style={{ marginTop: 8, textAlign: 'center' }}>
+              <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{pickup_video.title}</div>
+              <div className="text-sm text-gray-500">{pickup_video.date} | {pickup_video.genre.join(", ")}</div>
+            </div>
+          </div>
+        </div>
       </section>
       {/* 最新動画欄 */}
       <section className="w-full bg-white rounded shadow p-4 mb-8">
@@ -107,6 +127,7 @@ export default function Home({ texts }) {
           </div>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

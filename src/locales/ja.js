@@ -1,5 +1,20 @@
 const ja = {
-  intro: "ボカロP、音楽プロデューサー「<strong>佐藤くま</strong>」です。",
+  navButtons: [
+    { label: "ホーム", link: "/", icon: "fa-solid fa-house" }
+    ,{ label: "コンテンツ", link: "/contents", icon: "fa-solid fa-film" }
+    ,{ label: "自己紹介", link: "/aboutme", icon: "fa-solid fa-user" }
+    ,{ label: "各リンク", link: "/links", icon: "fa-solid fa-link" }
+  ],
+  intro: "ボカロP、EDMコンポーザー「<strong>佐藤くま</strong>」です。<br>CD・グッズは<a href='https://kumajsato.booth.pm/' target='_blank'><i class='fa-solid fa-store'></i><strong>BOOTH</strong></a>にてご購入いただけます。",
+  latestNewsTitle: "最新情報",
+  latestVideoTitle: "最新動画",
+  pickupVideoTitle: "🔥🔥🔥ピックアップ🔥🔥🔥",
+  latestNews: [
+    { date: "2025/09/01", content: "『カミサマコーリング feat. 知声』公開しました" }
+    ,{ date: "2025/10/11", content: "ホームページを公開しました" }
+    ,{ date: "2025/10/26", content: "音系・メディアミックス同人即売会 [M3]<a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>【E-02a】</strong></a>にて出展予定" }
+    //,{ date: "2025/11/29", content: "ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！" }
+    ,{ date: "2025/10/15", content: "M3、ボーマスにて頒布するCD『アイムタフ feat. 知声 - EP』の情報を公開しました。" }],
   aboutMeSections: [
     {
       title: "名前",
@@ -38,27 +53,13 @@ const ja = {
          `
     }
   ],
-  latestNewsTitle: "最新情報",
-  latestVideoTitle: "最新動画",
-  latestNews: [
-    { date: "2025/09/01", content: "『カミサマコーリング feat. 知声』公開しました" }
-    ,{ date: "2025/10/11", content: "ホームページを公開しました" }
-    ,{ date: "2025/10/26", content: "音系・メディアミックス同人即売会 [M3]<strong>【E-02a】</strong>にて出展予定" }
-    //,{ date: "2025/11/29", content: "ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！" }
-  ],
-  navButtons: [
-    { label: "ホーム", link: "/", icon: "fa-solid fa-house" }
-    ,{ label: "コンテンツ", link: "/contents", icon: "fa-solid fa-film" }
-    ,{ label: "自己紹介", link: "/aboutme", icon: "fa-solid fa-user" }
-    ,{ label: "各リンク", link: "/links", icon: "fa-solid fa-link" }
-  ],
   externalLinks: [
-    { label: "X(旧Twitter)", id: "@kumajsato", url: "https://x.com/kumajsato" , icon: "fa-brands fa-x-twitter" }
+    { label: "BOOTH", id: "ペパロニドーナツ", url: "https://kumajsato.booth.pm/" , icon: "fa-solid fa-store" }
+    ,{ label: "X(旧Twitter)", id: "@kumajsato", url: "https://x.com/kumajsato" , icon: "fa-brands fa-x-twitter" }
     ,{ label: "instagram", id: "@kumajsato", url: "https://www.instagram.com/kumajsato" , icon: "fa-brands fa-instagram" }
     ,{ label: "TikTok", id: "@kumajsato", url: "https://www.tiktok.com/@kumajsato" , icon: "fa-brands fa-tiktok" }
     ,{ label: "Youtube", id: "@kumajsato", url: "https://www.youtube.com/@kumajsato" , icon: "fa-brands fa-youtube" }
     ,{ label: "niconico", id: "14922039", url: "https://www.nicovideo.jp/user/14922039" , icon: "fa-solid fa-tv" }
-    ,{ label: "BOOTH", id: "ペパロニドーナツ", url: "https://kumajsato.booth.pm/" , icon: "fa-solid fa-store" }
     ,{ label: "piapro", id: "kumajsato", url: "https://piapro.jp/kumajsato" , icon: "fa-solid fa-music" }
     //,{ label: "Bandcamp", id: "Kuma J Sato", url: "https://kumajsato.bandcamp.com/" , icon: "fa-brands fa-bandcamp" }
     ,{ label: "SoundCloud", id: "kumajsato", url: "https://soundcloud.com/kumajsato" , icon: "fa-brands fa-soundcloud" }
