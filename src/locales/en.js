@@ -1,5 +1,21 @@
 const en = {
-  intro: "Vocaloid producer and Composer <strong>Kuma J Sato</strong>.",
+  navButtons: [
+    { label: "Home", link: "/", icon: "fa-solid fa-house" },
+    { label: "Contents", link: "/contents", icon: "fa-solid fa-film" },
+    { label: "About Me", link: "/aboutme", icon: "fa-solid fa-user" },
+    { label: "Links", link: "/links", icon: "fa-solid fa-link" }
+  ],
+  intro: "Vocaloid producer and EDM composer <strong>Kuma J Sato</strong>.<br>You can purchase CDs and goods at <a href='https://kumajsato.booth.pm/' target='_blank'><i class='fa-solid fa-store'></i><strong>BOOTH</strong></a>.",
+  latestNewsTitle: "Latest News",
+  latestVideoTitle: "Latest Video",
+  pickupVideoTitle: "🔥🔥🔥Pickup🔥🔥🔥",
+  latestNews: [
+    { date: "2025/09/01", content: "'God's Calling feat. Chis-A' has been released." },
+    { date: "2025/10/11", content: "Homepage published." },
+    { date: "2025/10/26", content: "Scheduled to exhibit at M3 <a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>[E-02a]</strong></a>!" },
+    //,{ date: "2025/11/29", content: "Scheduled to exhibit at THE VOC@LOiD M@STER 61 <strong>[F08]</strong>!" }
+    { date: "2025/10/15", content: "CD 'I'm Tough feat. Chis-A - EP' info for M3 and THE VOC@LOiD M@STER published." }
+  ],
   aboutMeSections: [
     {
       title: "Name",
@@ -11,7 +27,7 @@ const en = {
         Born on October 11, 1996 in Tokyo.<br>
         Started producing music mainly EDM at age 20, influenced by Avicii, Marshmello, and Skrillex.<br>
         Released first VOCALOID song 'Fiction feat. Hatsune Miku' at age 25.<br>
-        Inspired by the voice of Voisona's 'Chisey', continues activities as a Vocaloid producer.<br>
+        Inspired by the voice of Voisona's 'Chis-A', continues activities as a Vocaloid producer.<br>
         Distributes CDs at doujin music events such as 'M3' and Vocaloid-only events like 'THE VOC@LOiD M@STER'.
       `
     },
@@ -38,27 +54,13 @@ const en = {
          `
     }
   ],
-  latestNewsTitle: "Latest News",
-  latestVideoTitle: "Latest Video",
-  latestNews: [
-    { date: "2025/09/01", content: "'God's Calling feat. Chis-A' has been released." },
-    { date: "2025/10/11", content: "Homepage published." },
-    { date: "2025/10/26", content: "Scheduled to exhibit at M3 [E-02a], a music & media mix doujin event!" }
-    //,{ date: "2025/11/29", content: "Scheduled to exhibit at THE VOC@LOiD M@STER 61 [F08], a Vocaloid-only event!" }
-  ],
-  navButtons: [
-    { label: "Home", link: "/", icon: "fa-solid fa-house" },
-    { label: "Contents", link: "/contents", icon: "fa-solid fa-film" },
-    { label: "About Me", link: "/aboutme", icon: "fa-solid fa-user" },
-    { label: "Links", link: "/links", icon: "fa-solid fa-link" }
-  ],
   externalLinks: [
+    { label: "BOOTH", id: "Peparoni Donuts", url: "https://kumajsato.booth.pm/", icon: "fa-solid fa-store" },
     { label: "X (formerly Twitter)", id: "@kumajsato", url: "https://x.com/kumajsato", icon: "fa-brands fa-x-twitter" },
     { label: "instagram", id: "@kumajsato", url: "https://www.instagram.com/kumajsato", icon: "fa-brands fa-instagram" },
     { label: "TikTok", id: "@kumajsato", url: "https://www.tiktok.com/@kumajsato", icon: "fa-brands fa-tiktok" },
     { label: "Youtube", id: "@kumajsato", url: "https://www.youtube.com/@kumajsato", icon: "fa-brands fa-youtube" },
     { label: "niconico", id: "14922039", url: "https://www.nicovideo.jp/user/14922039", icon: "fa-solid fa-tv" },
-    { label: "BOOTH", id: "Peparoni Donuts", url: "https://kumajsato.booth.pm/", icon: "fa-solid fa-store" },
     { label: "piapro", id: "kumajsato", url: "https://piapro.jp/kumajsato", icon: "fa-solid fa-music" },
     //,{ label: "Bandcamp", id: "Kuma J Sato", url: "https://kumajsato.bandcamp.com/", icon: "fa-brands fa-bandcamp" },
     { label: "SoundCloud", id: "kumajsato", url: "https://soundcloud.com/kumajsato", icon: "fa-brands fa-soundcloud" }
