@@ -52,7 +52,7 @@ const videos = [
     url: "https://www.youtube.com/embed/_VWyLgYY9gU",
     title: "月明かりじゃ物足んない feat. 知声",
     date: "2024/04/25",
-    genre: ["Electro Swing"]
+    genre: ["House"]
   },
   {
     url: "https://www.youtube.com/embed/sqaKnJG7Iww",

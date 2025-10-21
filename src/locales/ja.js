@@ -1,10 +1,13 @@
 const ja = {
+  // Header-related
   navButtons: [
     { label: "ホーム", link: "/", icon: "fa-solid fa-house" }
     ,{ label: "コンテンツ", link: "/contents", icon: "fa-solid fa-film" }
     ,{ label: "自己紹介", link: "/aboutme", icon: "fa-solid fa-user" }
     ,{ label: "各リンク", link: "/links", icon: "fa-solid fa-link" }
   ],
+
+  // Home-related
   intro: "ボカロP、EDMコンポーザー「<strong>佐藤くま</strong>」です。<br>CD・グッズは<a href='https://kumajsato.booth.pm/' target='_blank'><i class='fa-solid fa-store'></i><strong>BOOTH</strong></a>にてご購入いただけます。",
   latestNewsTitle: "最新情報",
   latestVideoTitle: "最新動画",
@@ -12,9 +15,56 @@ const ja = {
   latestNews: [
     { date: "2025/09/01", content: "『カミサマコーリング feat. 知声』公開しました" }
     ,{ date: "2025/10/11", content: "ホームページを公開しました" }
-    ,{ date: "2025/10/26", content: "音系・メディアミックス同人即売会 [M3]<a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>【E-02a】</strong></a>にて出展予定" }
+    ,{ date: "2025/10/26", content: "音系・メディアミックス同人即売会 [M3]<a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>【E-02a】</strong></a>に出展予定！" }
     //,{ date: "2025/11/29", content: "ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！" }
-    ,{ date: "2025/10/15", content: "M3、ボーマスにて頒布するCD『アイムタフ feat. 知声 - EP』の情報を公開しました。" }],
+    ,{ date: "2025/10/15", content: "M3、ボーマスにて頒布するCD『アイムタフ feat. 知声 - EP』の情報を公開しました。" }
+  ],
+
+  // Contents-related
+  contentsTabs: {
+    youtube: "YouTube",
+    videos: "YouTube",
+    youtubeIcon: "fa-brands fa-youtube",
+    streaming: "ストリーミング",
+    streamingIcon: "fa-solid fa-compact-disc",
+    other: "Streaming"
+  },
+  contentsTracksLabel: "-収録楽曲-",
+  // Streaming / album data for Contents page (managed in locale)
+  contentsStreaming: [
+    {
+      image: process.env.PUBLIC_URL + '/images/cd_jacket/uni.png',
+      title: "ユニ feat. 初音ミク, 知声 - EP",
+      author: "佐藤くま",
+      tracks: ["フィクション feat. 初音ミク", "ユニ feat. 初音ミク, 知声", "キッド feat. 初音ミク", "トーキョーシミュレーター feat. 知声"],
+      year: "2022",
+      spotify: "https://open.spotify.com/intl-ja/album/3H55VpG1vkT1ewFa3rF1Sl",
+      apple: "https://music.apple.com/jp/album/uni-feat-hatsunemiku-chis-a-ep/1654591450",
+      other: "https://nodee.net/a/6pvadib5"
+    },
+    {
+      image: process.env.PUBLIC_URL + '/images/cd_jacket/coinlaundry.png',
+      title: "世界の終わりとコインランドリー feat. 知声 - EP",
+      author: "佐藤くま",
+      tracks: ["みにくいほしのこ feat. 知声", "僕の郷 feat. 知声", "世界の終わりとコインランドリー feat. 知声", "誰かのための歌 feat. 知声"],
+      year: "2023",
+      spotify: "https://open.spotify.com/intl-ja/album/2iblpC4ZTXBSRUyQn1lT50",
+      apple: "https://music.apple.com/jp/album/the-end-of-the-world-and-laundromats-ep/1719236307",
+      other: "https://nodee.net/a/jzw0bs86"
+    },
+    {
+      image: process.env.PUBLIC_URL + '/images/cd_jacket/imtough.png',
+      title: "アイムタフ！ feat. 知声 - EP",
+      author: "佐藤くま",
+      tracks: ["月明かりじゃ物足んない feat. 知声", "クチダケ feat. 知声", "カミサマコーリング feat. 知声", "アイムタフ！ feat. 知声"],
+      year: "2025",
+      spotify: "",
+      apple: "",
+      other: ""
+    }
+  ],
+
+  // About Me
   aboutMeSections: [
     {
       title: "名前",
@@ -27,7 +77,7 @@ const ja = {
           20歳の時にAviciiやMarshmello、Skrillexに影響を受け、EDMを中心に音楽制作を開始。<br>
           25歳の時に初めてVOCALOIDを使用した楽曲『フィクション feat. 初音ミク』を発表。<br>
           Voisonaの「知声」の声に感銘を受け、ボカロPとしての活動を継続中。<br>
-          同人音楽即売会「M3」やボカロオンリーイベント「THE VOC@LOiD M@STER」などでCDを頒布。
+          同人音楽即売会「M3」やボカロオンリーイベント「THE VOC@LOiD M@スター」などでCDを頒布。
         `
     },
     {
@@ -53,6 +103,8 @@ const ja = {
          `
     }
   ],
+
+  // External links
   externalLinks: [
     { label: "BOOTH", id: "ペパロニドーナツ", url: "https://kumajsato.booth.pm/" , icon: "fa-solid fa-store" }
     ,{ label: "X(旧Twitter)", id: "@kumajsato", url: "https://x.com/kumajsato" , icon: "fa-brands fa-x-twitter" }
@@ -61,8 +113,9 @@ const ja = {
     ,{ label: "Youtube", id: "@kumajsato", url: "https://www.youtube.com/@kumajsato" , icon: "fa-brands fa-youtube" }
     ,{ label: "niconico", id: "14922039", url: "https://www.nicovideo.jp/user/14922039" , icon: "fa-solid fa-tv" }
     ,{ label: "piapro", id: "kumajsato", url: "https://piapro.jp/kumajsato" , icon: "fa-solid fa-music" }
-    //,{ label: "Bandcamp", id: "Kuma J Sato", url: "https://kumajsato.bandcamp.com/" , icon: "fa-brands fa-bandcamp" }
     ,{ label: "SoundCloud", id: "kumajsato", url: "https://soundcloud.com/kumajsato" , icon: "fa-brands fa-soundcloud" }
-  ]
+    //,{ label: "Bandcamp", id: "Kuma J Sato", url: "https://kumajsato.bandcamp.com/" , icon: "fa-brands fa-bandcamp" }
+  ],
+  // ...any additional locale keys remain unchanged...
 };
 export default ja;

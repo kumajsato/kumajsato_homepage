@@ -12,7 +12,12 @@ export default function Links({ texts }) {
       <Header texts={texts} />
       <main className="flex-1 flex flex-col items-center justify-center w-full">
         <section className="w-full max-w-lg mx-auto bg-white rounded shadow p-4 mb-8">
-          <h2 className="text-xl font-bold mb-2" style={{ textAlign: 'center' }}>{texts.navButtons[3].label}</h2>
+          <div className="section-title-wrap" style={{ marginBottom: 8 }}>
+            {texts.navButtons && texts.navButtons[3] && texts.navButtons[3].icon && (
+              <i className={`${texts.navButtons[3].icon} section-icon`} aria-hidden="true"></i>
+            )}
+            <h2 className="text-xl font-bold mb-2" style={{ textAlign: 'center' }}>{texts.navButtons[3].label}</h2>
+          </div>
           <div className="external-links-wrapper">
             {texts.externalLinks.map((link, idx) => (
               <a

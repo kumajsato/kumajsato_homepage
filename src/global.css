@@ -1,12 +1,17 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
+/* ==========================
+   Base / Default styles
+   (keep core layout and component rules here)
+   ========================== */
+
 body {
-  background: #FAFAFA;
   margin: 0 auto;
   width: 100vw;
   min-width: 320px;
   max-width: 100%;
   min-height: 100svh;
+  background: #EEEEEE;
 }
 
 .main-container {
@@ -38,6 +43,7 @@ body {
   align-items: stretch;
   margin-bottom: 3%;
 }
+
 .youtube-video {
   max-width: 500px;
   width: 100%;
@@ -50,12 +56,7 @@ body {
   justify-content: flex-start;
   height: 100%;
 }
-@media (max-width: 1100px) {
-  .youtube-video {
-    flex-basis: 100%; /* 狭い画面では1列 */
-    min-width: 0;
-  }
-}
+
 .youtube-video iframe {
   width: 100%;
   height: 280px;
@@ -70,9 +71,10 @@ body {
   margin: 0 auto;
   flex-direction: row !important;
 }
+
 .header-nav .nav-btn {
   flex: 1;
-  background: #fAfAfA;
+  background: #EFEFEF;
   color: #252525;
   border: 1px solid #cccccc;
   border-radius: 0;
@@ -83,9 +85,11 @@ body {
   text-decoration: none;
   transition: background 0.2s;
 }
+
 .header-nav .nav-btn:hover {
   background: #dedede;
 }
+
 .header-nav .nav-btn-inner {
   display: block;
   flex-direction: row;
@@ -94,11 +98,13 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+
 .header-nav .nav-btn-label {
   display: inline-block;
   text-align: center;
   margin: 0 auto;
 }
+
 .header-nav .nav-btn i {
   display: block;
   margin-left: auto;
@@ -117,7 +123,8 @@ footer {
   font-size: 0.95rem;
 }
 
-section, main {
+section,
+main {
   width: 100%;
   margin: 0 auto;
   max-width: 1024px;
@@ -125,7 +132,7 @@ section, main {
   font-size: 90%;
 }
 
-main{
+main {
   padding: 0 0.5% 1% 0.5%;
   border-right: 1.5px solid #e0e0e0;
   border-left: 1.5px solid #e0e0e0;
@@ -203,7 +210,7 @@ section {
 }
 
 .aboutme-title {
-    color: #444;
+  color: #444;
 }
 
 a {
@@ -211,45 +218,71 @@ a {
   text-decoration: underline;
   transition: color 0.2s;
 }
+
 a:hover {
   color: #ea5320;
 }
 
-@media (max-width: 1000px) {
-  section, main {
+/* Tab button styles (distinct from genre buttons) */
+.tab-btn {
+  background: #dedede;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  font-weight: 700;
+  color: #374151; /* slate-700 */
+  font-size: 1.05rem;
+  margin: 0 4px;
+  position: relative;
+  transition: color 160ms ease, background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  border-bottom: 3px solid transparent;
+}
 
-  }
-  .external-link-box {
-    flex-basis: 45%; /* 2列 */
-  }
+.tab-btn:hover {
+  color: #111827; /* slate-900 */
+  background: rgba(15,23,42,0.04);
+  transform: translateY(0px);
 }
-@media (max-width: 800px) {
-  .external-link-box {
-    flex-basis: 45%; /* 1列表示 */
-  }
+
+.tab-btn:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 2px;
 }
-@media (max-width: 500px) {
-  .header-nav {
-    flex-direction: row !important;
-  }
-  .header-nav .nav-btn-inner {
-    flex-direction: column;
-  }
-  .header-nav .nav-btn-label {
-    display: block;
-    font-size: 90%;
-    margin-top: 2px;
-  }
-  .header-nav .nav-btn i {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-size: 150%;
-  }
+
+.tab-btn.active {
+  color: #ffffff;
+  background: linear-gradient(45deg,#ff7a18,#ffa646);
+  box-shadow: 0 8px 24px rgba(255,135,60,0.18);
+  border-bottom-color: transparent;
 }
-@media (max-width: 600px) {
-  .external-link-box {
-    flex-basis: 45%; /* 1列 */
-  }
+
+/* make tab buttons visually grouped */
+.tab-btn:first-child {
+  margin-left: 0;
+}
+
+.tab-btn:last-child {
+  margin-right: 0;
+}
+
+/* section title icon */
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.section-icon {
+  font-size: 28px;
+  color: inherit; /* 見出しの文字色に合わせる */
+}
+
+/* Header/Nav icons and external link icons inherit text color */
+.nav-icon,
+.external-link-box i {
+  color: inherit;
 }
 
 /* Home 最新情報欄の左右マージン */
@@ -270,6 +303,7 @@ a:hover {
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
+
 .genre-toggle-btn.active {
   background: #ea5320;
   color: #fff;
@@ -281,6 +315,196 @@ a:hover {
   outline-offset: 2px;
 }
 
+/* Streaming card styles (desktop: horizontal) */
+.streaming-card {
+  display: grid;
+  grid-template-columns: 160px 1fr 360px; /* image | meta | tracks */
+  grid-template-rows: auto auto; /* top row for meta/tracks, second row for links */
+  grid-template-areas:
+    "image meta tracks"
+    "image links links";
+  row-gap: 10px;
+  column-gap: 16px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 320px;
+  margin: 8px;
+  align-items: start;
+}
+
+/* jacket image */
+.streaming-card .streaming-image {
+  grid-area: image;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: 0 0 160px; /* fixed column */
+}
+
+/* album title / artist / year / small meta block */
+.streaming-card .streaming-meta {
+  grid-area: meta;
+  font-size: 0.95rem;
+  color: #444;
+  padding-top: 6px;
+  padding-left: 2%;
+}
+
+.streaming-card .streaming-title{
+  font-weight: bold;
+}
+
+/* tracks list: grows to fill available space */
+.streaming-card .streaming-tracks {
+  height: 78px;
+  margin: 0;
+  /* keep numbering inside but ensure it doesn't expand the card */
+  padding-left: 18px; /* visual indent for numbering */
+  list-style-position: inside;
+  padding-left: 0; /* we use inside numbering */
+  margin: 0;
+
+  /* limit the visible height and make this region scrollable when content overflows */
+  max-height: 300px;
+  overflow: auto;
+
+  /* prevent the tracks column from forcing the card wider */
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+
+  /* ensure long track titles wrap instead of expanding width */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.streaming-tracks-label {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  /*margin: 6px 0 8px 0;*/
+}
+
+/* links area: 3-column grid, buttons stretch to fill columns, rectangular */
+.streaming-card .streaming-links {
+  grid-area: links;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+/* stream link buttons: rectangular and fill column */
+.streaming-card .stream-link {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px; /* slightly rounded rectangle */
+  background: #dddddd;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.streaming-card .stream-link i {
+  font-size: 1.05em;
+}
+/* Stream link buttons - service colors */
+  .stream-link {
+    background: rgba(255,255,255,0.03);
+    color: #e6e6e6;
+  }
+  .stream-link i {
+    color: inherit;
+  }
+  .stream-link.apple {
+    background: #000; /* Apple: dark */
+    color: #ffffff;
+  }
+  .stream-link.spotify {
+    background: #1DB954; /* Spotify brand green */
+    color: #ffffff;
+  }
+  .stream-link:hover {
+    filter: brightness(1.02);
+    /*transform: translateY(-2px);*/
+  }
+  .stream-link.apple:hover {
+    background: #111;
+  }
+  .stream-link.spotify:hover {
+    filter: brightness(0.95);
+  }
+  .stream-link.other:hover {
+    background: rgba(255,255,255,0.06);
+  }
+
+/* Mobile: stack vertically under 600px */
+@media (max-width: 600px) {
+  .streaming-card {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 24px);
+    max-width: 100%;
+    align-items: stretch;
+    padding: 0px;
+    gap: 8px;
+  }
+  .streaming-card .streaming-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    flex: none;
+  }
+  .streaming-card .streaming-meta,
+  .streaming-card .streaming-tracks,
+  .streaming-card .streaming-links {
+    width: 100%;
+  }
+  .streaming-card .streaming-tracks {
+    max-height: 220px; /* allow more room for numbered list */
+    overflow: auto;
+    padding-left: 18px;
+  }
+  .streaming-card .streaming-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .streaming-card .stream-link {
+    width: auto;
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+/* Desktop tweak: ensure good spacing on slightly larger screens */
+@media (min-width: 601px) {
+  .streaming-card {
+    align-items: flex-start;
+  }
+  .streaming-card .streaming-meta {
+    padding-top: 6px;
+  }
+}
+
+/* ==========================
+   Dark mode / prefers-color-scheme
+   (single merged block for all dark-mode adjustments)
+   ========================== */
 @media (prefers-color-scheme: dark) {
   body {
     background: #222;
@@ -292,7 +516,10 @@ a:hover {
   a:hover {
     color: #ea5320;
   }
-  section, main, .external-link-box, footer {
+  section,
+  main,
+  .external-link-box,
+  footer {
     background: #222;
     color: #eee;
     border-color: #444;
@@ -324,5 +551,164 @@ a:hover {
   .genre-toggle-btn:focus {
     outline: 2px solid #ea5320;
     outline-offset: 2px;
+  }
+  .tab-btn {
+    color: #ffffff; /* slate-700 */
+    background: #333;
+  }
+
+  .tab-btn:hover {
+    color: #ea5320; /* slate-900 */
+    background: rgba(70, 70, 70, 1);
+    transform: translateY(0px);
+  }
+
+  .tab-btn.active {
+    color: #ffffff;
+    background: linear-gradient(45deg,#ff7a18,#ffa646);
+    box-shadow: 0 8px 24px rgba(255,135,60,0.18);
+    border-bottom-color: transparent;
+  }
+
+  .tab-btn:focus {
+    outline: 3px solid rgba(59,130,246,0.18);
+  }
+
+  /* Streaming card - dark mode adjustments */
+  .streaming-card,
+  .streaming-card.vertical {
+    background: #141414;
+    border-color: #2b2b2b;
+    color: #e6e6e6;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+  .streaming-card .streaming-title,
+  .streaming-author,
+  .streaming-card.vertical .streaming-title {
+    color: #ffffff;
+  }
+  .streaming-meta,
+  .streaming-year,
+  .streaming-tracks li {
+    color: #cfcfcf;
+  }
+  .streaming-card .streaming-image,
+  .streaming-card.vertical .streaming-image {
+    background: #222;
+  }
+  .stream-link.other {
+    background: rgba(255,255,255,0.04);
+    color: #e6e6e6;
+  }
+}
+
+/* ==========================
+   Media queries consolidated
+   (grouped from larger -> smaller)
+   ========================== */
+
+/* Narrower than ~1100px: single column youtube videos */
+@media (max-width: 1100px) {
+  .youtube-video {
+    flex-basis: 100%; /* 狭い画面では1列 */
+    min-width: 0;
+  }
+}
+
+/* External link boxes: stack to 2-column at narrower widths */
+@media (max-width: 1000px) {
+  .external-link-box {
+    flex-basis: 45%; /* 2列 */
+  }
+}
+
+/* Streaming grid behavior */
+@media (min-width: 900px) {
+  .streaming-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+}
+@media (max-width: 900px) {
+  .streaming-grid {
+    display: block;
+  }
+  .streaming-card {
+    width: 500px;
+    max-width: 500px;
+  }
+}
+
+/* Slightly narrower screens */
+@media (max-width: 700px) {
+  .streaming-card.vertical {
+    width: calc(100% - 24px);
+  }
+}
+
+/* Mobile specific rules (<=600px): vertical streaming cards, external links 2-column fallback */
+@media (max-width: 600px) {
+  .streaming-card {
+    flex-direction: column;
+    width: calc(100% - 24px);
+    max-width: 100%;
+    align-items: stretch;
+  }
+  .streaming-card .streaming-image {
+    width: 100%;
+    /*height: 260px;*/
+    margin-bottom: 10px;
+    flex: none;
+  }
+  .streaming-title {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  .streaming-meta {
+    margin-bottom: 6px;
+  }
+  .streaming-year {
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  .streaming-tracks {
+    max-height: 220px;
+    overflow: auto;
+
+    /* same wrapping/box-sizing rules for mobile */
+    padding-left: 18px;
+    box-sizing: border-box;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  /* external links on smaller screens: maintain comfortable width */
+  .external-link-box {
+    flex-basis: 45%; /* preserve prior behavior */
+  }
+}
+
+/* Small header/nav adjustments for very narrow screens */
+@media (max-width: 500px) {
+  .header-nav {
+    flex-direction: row !important;
+  }
+  .header-nav .nav-btn-inner {
+    flex-direction: column;
+  }
+  .header-nav .nav-btn-label {
+    display: block;
+    font-size: 90%;
+    margin-top: 2px;
+  }
+  .header-nav .nav-btn i {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 150%;
   }
 }

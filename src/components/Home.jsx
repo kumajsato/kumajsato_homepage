@@ -15,10 +15,11 @@ export function Header({ texts }) {
           <Link key={i} to={btn.link} className="nav-btn">
             <span className="nav-btn-inner" style={{ display: 'block', alignItems: 'center', justifyContent: 'center' }}>
               {/* アイコンをページごとに表示 */}
-              {i === 0 && <i className="fa-solid fa-house" style={{ marginTop: 8, marginBottom: 8 }}></i>}
-              {i === 1 && <i className="fa-solid fa-film" style={{ marginTop: 8, marginBottom: 8 }}></i>}
-              {i === 2 && <i className="fa-solid fa-user" style={{ marginTop: 8, marginBottom: 8 }}></i>}
-              {i === 3 && <i className="fa-solid fa-link" style={{ marginTop: 8, marginBottom: 8 }}></i>}
+              {btn.icon ? (
+                <i className={`${btn.icon} nav-icon`} style={{ marginTop: 8, marginBottom: 8 }}></i>
+              ) : (
+                i === 0 && <i className="fa-solid fa-house" style={{ marginTop: 8, marginBottom: 8 }}></i>
+              )}
               <span className="nav-btn-label">{btn.label}</span>
             </span>
           </Link>
@@ -60,6 +61,44 @@ export default function Home({ texts }) {
   useEffect(() => {
     const isJapanese = navigator.language.startsWith('ja');
     document.title = isJapanese ? texts.navButtons[0].label + ' | 佐藤くま' : texts.navButtons[0].label + ' | Kuma J Sato';
+    // ランダム背景画像（images.jsonから自動取得）
+    const setBg = async () => {
+      const base = process.env.PUBLIC_URL + '/images/';
+      let files = [];
+      try {
+        const res = await fetch(base + 'images.json');
+        if (res.ok) {
+          files = await res.json();
+        }
+      } catch {}
+      let found = [];
+      for (const f of files) {
+        try {
+          const imgRes = await fetch(base + f, { method: 'HEAD' });
+          if (imgRes.ok) found.push(base + f);
+        } catch {}
+      }
+      if (found.length > 0) {
+        const img = found[Math.floor(Math.random() * found.length)];
+        document.body.style.backgroundImage = `url(${img})`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        document.body.style.backgroundAttachment = 'fixed';
+        document.body.style.backgroundRepeat = 'no-repeat';
+      } else {
+        document.body.style.backgroundImage = '';
+        document.body.style.background = '';
+        document.body.style.backgroundAttachment = '';
+        document.body.style.backgroundRepeat = '';
+      }
+    };
+    setBg();
+    return () => {
+      document.body.style.backgroundImage = '';
+      document.body.style.background = '';
+      document.body.style.backgroundAttachment = '';
+      document.body.style.backgroundRepeat = '';
+    };
   }, [texts]);
 
   // 最新情報をdate順で最新3件のみ表示

@@ -1,10 +1,13 @@
 const en = {
+  // Header-related
   navButtons: [
     { label: "Home", link: "/", icon: "fa-solid fa-house" },
     { label: "Contents", link: "/contents", icon: "fa-solid fa-film" },
     { label: "About Me", link: "/aboutme", icon: "fa-solid fa-user" },
     { label: "Links", link: "/links", icon: "fa-solid fa-link" }
   ],
+
+  // Home-related
   intro: "Vocaloid producer and EDM composer <strong>Kuma J Sato</strong>.<br>You can purchase CDs and goods at <a href='https://kumajsato.booth.pm/' target='_blank'><i class='fa-solid fa-store'></i><strong>BOOTH</strong></a>.",
   latestNewsTitle: "Latest News",
   latestVideoTitle: "Latest Video",
@@ -13,9 +16,45 @@ const en = {
     { date: "2025/09/01", content: "'God's Calling feat. Chis-A' has been released." },
     { date: "2025/10/11", content: "Homepage published." },
     { date: "2025/10/26", content: "Scheduled to exhibit at M3 <a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>[E-02a]</strong></a>!" },
-    //,{ date: "2025/11/29", content: "Scheduled to exhibit at THE VOC@LOiD M@STER 61 <strong>[F08]</strong>!" }
     { date: "2025/10/15", content: "CD 'I'm Tough feat. Chis-A - EP' info for M3 and THE VOC@LOiD M@STER published." }
   ],
+
+  // Contents-related
+  contentsTabs: {
+    youtube: "YouTube",
+    videos: "YouTube",
+    youtubeIcon: "fa-brands fa-youtube",
+    streaming: "Streaming",
+    streamingIcon: "fa-solid fa-compact-disc",
+    other: "Streaming"
+  },
+  contentsTracksLabel: "-Tracks-",
+
+  // Streaming / album data for Contents page
+  contentsStreaming: [
+    {
+      image: process.env.PUBLIC_URL + '/images/cd_jacket/coinlaundry.png',
+      title: 'The End of the World and Laundromat',
+      author: 'Kuma J Sato',
+      tracks: ['Track A', 'Track B', 'Track C'],
+      year: '2023',
+      spotify: 'https://open.spotify.com/',
+      apple: 'https://music.apple.com/',
+      other: 'https://kumajsato.booth.pm/'
+    },
+    {
+      image: process.env.PUBLIC_URL + '/images/cd_jacket/imtough.png',
+      title: "I'm Tough feat. Chis-A - EP",
+      author: 'Kuma J Sato',
+      tracks: ["I'm Tough!", 'B-side 1', 'B-side 2'],
+      year: '2025',
+      spotify: 'https://open.spotify.com/',
+      apple: 'https://music.apple.com/',
+      other: 'https://kumajsato.booth.pm/'
+    }
+  ],
+
+  // About Me
   aboutMeSections: [
     {
       title: "Name",
@@ -54,6 +93,8 @@ const en = {
          `
     }
   ],
+
+  // External links
   externalLinks: [
     { label: "BOOTH", id: "Peparoni Donuts", url: "https://kumajsato.booth.pm/", icon: "fa-solid fa-store" },
     { label: "X (formerly Twitter)", id: "@kumajsato", url: "https://x.com/kumajsato", icon: "fa-brands fa-x-twitter" },
@@ -62,8 +103,7 @@ const en = {
     { label: "Youtube", id: "@kumajsato", url: "https://www.youtube.com/@kumajsato", icon: "fa-brands fa-youtube" },
     { label: "niconico", id: "14922039", url: "https://www.nicovideo.jp/user/14922039", icon: "fa-solid fa-tv" },
     { label: "piapro", id: "kumajsato", url: "https://piapro.jp/kumajsato", icon: "fa-solid fa-music" },
-    //,{ label: "Bandcamp", id: "Kuma J Sato", url: "https://kumajsato.bandcamp.com/", icon: "fa-brands fa-bandcamp" },
     { label: "SoundCloud", id: "kumajsato", url: "https://soundcloud.com/kumajsato", icon: "fa-brands fa-soundcloud" }
-  ]
+  ],
 };
 export default en;

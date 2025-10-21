@@ -13,7 +13,12 @@ export default function AboutMe({ texts }) {
       <main className="flex-1 flex flex-col items-center justify-center">
         {/* 自己紹介欄 */}
         <section className="w-full max-w-lg mx-auto bg-white rounded shadow p-4 mb-8">
-          <h2 className="text-xl font-bold mb-2" style={{ textAlign: 'center' }}>{texts.navButtons[2].label}</h2>
+          <div className="section-title-wrap" style={{ marginBottom: 8 }}>
+            {texts.navButtons && texts.navButtons[2] && texts.navButtons[2].icon && (
+              <i className={`${texts.navButtons[2].icon} section-icon`} aria-hidden="true"></i>
+            )}
+            <h2 className="text-xl font-bold mb-2" style={{ textAlign: 'center' }}>{texts.navButtons[2].label}</h2>
+          </div>
           <div className="aboutme-flex" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '24px' }}>
             <img src={require('../icon_human_300.png')} alt="プロフィール画像" style={{ maxWidth: 300, width: '100%', height: 'auto'}} />
             <div className="home-intro text-gray-700" style={{ flex: '1 1 200px', minWidth: 200 }}>
