@@ -70,7 +70,7 @@ const videos = [
     url: "https://www.youtube.com/embed/GkPwlH5uRes",
     title: "カミサマコーリング feat. 知声",
     date: "2025/09/01",
-    genre: ["Hip-Hop", "Future Bass"]
+    genre: ["Hip-Hop"]
   }
 ];
 

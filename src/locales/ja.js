@@ -22,8 +22,8 @@ const ja = {
 
   // Contents-related
   contentsTabs: {
-    youtube: "YouTube",
-    videos: "YouTube",
+    youtube: " MV",
+    videos: "MV",
     youtubeIcon: "fa-brands fa-youtube",
     streaming: "ストリーミング",
     streamingIcon: "fa-solid fa-compact-disc",
