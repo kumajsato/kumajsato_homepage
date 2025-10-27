@@ -16,12 +16,19 @@ export default function Blog({ texts }) {
     ? (texts.navButtons.find(b => b.link === '/blog') || texts.navButtons.find(b => /blog/i.test(b.label)))
     : null;
 
+  // current post metadata when viewing a single post
+  const currentPost = slug ? posts.find(p => p.slug === slug) : null;
+
   // set document title for Blog page (localized)
   useEffect(() => {
     const isJapanese = navigator.language.startsWith('ja');
-    const label = blogButton && blogButton.label ? blogButton.label : 'Blog';
-    document.title = isJapanese ? `${label} | 佐藤くま` : `${label} | Kuma J Sato`;
-  }, [texts, blogButton]);
+    if (slug && currentPost && currentPost.title) {
+      document.title = `${currentPost.title} | ${isJapanese ? '佐藤くま' : 'Kuma J Sato'}`;
+    } else {
+      const label = blogButton && blogButton.label ? blogButton.label : 'Blog';
+      document.title = isJapanese ? `${label} | 佐藤くま` : `${label} | Kuma J Sato`;
+    }
+  }, [slug, currentPost, texts, blogButton]);
 
   // responsive switch for header layout: row by default, column when width <= 800
   const [isNarrow, setIsNarrow] = useState(false);
@@ -50,9 +57,6 @@ export default function Blog({ texts }) {
   const tagCount = {};
   posts.forEach(p => (p.tags || []).forEach(t => { tagCount[t] = (tagCount[t] || 0) + 1; }));
   const allTags = Object.keys(tagCount).sort((a,b) => tagCount[b] - tagCount[a]);
-
-  // current post metadata when viewing a single post
-  const currentPost = slug ? posts.find(p => p.slug === slug) : null;
 
   useEffect(() => {
     if (!slug) {

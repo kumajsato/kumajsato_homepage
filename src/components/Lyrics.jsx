@@ -127,7 +127,7 @@ export default function Lyrics({ texts }) {
                 {currentItem && currentItem.youtube && (
                   <div className="youtube-video" style={{ margin: '0 auto 12px auto' }}>
                     <iframe
-                      src={toYouTubeEmbed(currentItem.youtube)}
+                      src={`${toYouTubeEmbed(currentItem.youtube)}?enablejsapi=1`}
                       title={`${resolveLocalized(currentItem.title) || currentItem.title} - video`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
