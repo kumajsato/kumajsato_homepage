@@ -4,7 +4,7 @@ import AboutMe from "./components/AboutMe";
 import Links from "./components/Links";
 import ja from "./locales/ja";
 import en from "./locales/en";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Blog from './components/Blog';
 import Lyrics from './components/Lyrics';
 
