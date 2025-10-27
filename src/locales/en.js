@@ -5,7 +5,7 @@ const en = {
     { label: "Contents", link: "/contents", icon: "fa-solid fa-film" },
     { label: "About Me", link: "/aboutme", icon: "fa-solid fa-user" },
     { label: "Links", link: "/links", icon: "fa-solid fa-link" },
-    { label: "Blog", link: "/blog", icon: "fa-solid fa-blog" }
+    { label: "Blog", link: "/blog", icon: "fa-solid fa-pen-to-square" }
   ],
 
   // Home-related

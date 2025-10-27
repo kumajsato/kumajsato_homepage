@@ -5,7 +5,7 @@ const ja = {
     ,{ label: "コンテンツ", link: "/contents", icon: "fa-solid fa-film" }
     ,{ label: "自己紹介", link: "/aboutme", icon: "fa-solid fa-user" }
     ,{ label: "各リンク", link: "/links", icon: "fa-solid fa-link" }
-    ,{ label: "ブログ", link: "/blog", icon: "fa-solid fa-blog" }
+    ,{ label: "ブログ", link: "/blog", icon: "fa-solid fa-pen-to-square" }
   ],
 
   // Home-related
