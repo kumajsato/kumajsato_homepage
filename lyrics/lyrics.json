@@ -1,0 +1,14 @@
+[
+  {
+    "title": "フィクション feat. 初音ミク",
+    "slug": "fiction",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/80QI2RC7-PM"
+  },
+  {
+    "title": "ユニ feat. 初音ミク, 知声",
+    "slug": "uni",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/HQv6P9Ujpzw"
+  }
+]
