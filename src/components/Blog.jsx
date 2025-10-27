@@ -16,6 +16,13 @@ export default function Blog({ texts }) {
     ? (texts.navButtons.find(b => b.link === '/blog') || texts.navButtons.find(b => /blog/i.test(b.label)))
     : null;
 
+  // set document title for Blog page (localized)
+  useEffect(() => {
+    const isJapanese = navigator.language.startsWith('ja');
+    const label = blogButton && blogButton.label ? blogButton.label : 'Blog';
+    document.title = isJapanese ? `${label} | 佐藤くま` : `${label} | Kuma J Sato`;
+  }, [texts, blogButton]);
+
   // responsive switch for header layout: row by default, column when width <= 800
   const [isNarrow, setIsNarrow] = useState(false);
   useEffect(() => {
