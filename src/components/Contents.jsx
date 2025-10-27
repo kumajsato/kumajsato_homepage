@@ -13,22 +13,50 @@ export default function Contents({ texts }) {
   videos.forEach(v => v.genre.forEach(g => { genreCount[g] = (genreCount[g] || 0) + 1; }));
   const allGenres = Object.keys(genreCount).sort((a, b) => genreCount[b] - genreCount[a]);
   const [selectedGenre, setSelectedGenre] = useState(null);
+  // lyrics lookup (title -> slug) loaded from public/lyrics/lyrics.json
+  const [lyricsIndex, setLyricsIndex] = useState([]);
+
+  useEffect(() => {
+    fetch('/lyrics/lyrics.json')
+      .then(r => r.json())
+      .then(list => setLyricsIndex(list || []))
+      .catch(() => setLyricsIndex([]));
+  }, []);
+
+  // helper: resolve localized field that may be a string or an object {ja,en}
+  const resolveLocalized = (val) => {
+    if (val == null) return '';
+    if (typeof val === 'string') return val;
+    if (typeof val === 'object') {
+      const isJapanese = navigator.language.startsWith('ja');
+      if (isJapanese) return val.ja || val.jp || val['日本語'] || val.en || Object.values(val)[0] || '';
+      return val.en || val['en-US'] || val.ja || Object.values(val)[0] || '';
+    }
+    return String(val);
+  };
+
+  const findLyricSlugForTitle = (title) => {
+    if (!title || !Array.isArray(lyricsIndex)) return null;
+    const normalize = s => (s||'').toLowerCase().replace(/\s+/g,'').replace(/feat\..*/i,'').replace(/feat.*/i,'').replace(/，/g,',');
+    const nt = normalize(resolveLocalized(title));
+    for (const entry of lyricsIndex) {
+      if (!entry || !entry.title) continue;
+      const ne = normalize(resolveLocalized(entry.title));
+      if (ne === nt || ne.startsWith(nt) || nt.startsWith(ne)) return entry.slug;
+    }
+    return null;
+  };
+
   // タブ状態（'videos' or 'streaming'）
   const [activeTab, setActiveTab] = useState('videos');
-  // video sort state (newest/oldest)
-  const [sortOrder, setSortOrder] = useState('desc'); // 'desc' = newest first
 
   // フィルタ
   let filteredVideos = videos;
   if (selectedGenre) {
     filteredVideos = filteredVideos.filter(v => v.genre.includes(selectedGenre));
   }
-  // ソート（dateフィールドがある場合に利用）
-  const sortedVideos = filteredVideos.slice().sort((a, b) => {
-    const da = new Date(a.date || 0).getTime();
-    const db = new Date(b.date || 0).getTime();
-    return sortOrder === 'desc' ? db - da : da - db;
-  });
+  // デフォルトでリストの後ろから（新しい順）表示
+  filteredVideos = filteredVideos.slice().reverse();
 
   return (
     <div className="main-container flex flex-col min-h-screen">
@@ -84,25 +112,24 @@ export default function Contents({ texts }) {
                   >{genre}</button>
                 ))}
               </div>
-              <div style={{ marginLeft: 'auto' }}>
-                <button className="tab-btn" onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')} aria-label="Toggle video sort" title={sortOrder === 'desc' ? 'Newest first' : 'Oldest first'}>
-                  <i className={`fa-solid ${sortOrder === 'desc' ? 'fa-sort-amount-down' : 'fa-sort-amount-up'}`} aria-hidden="true"></i>
-                </button>
-              </div>
             </div>
             <div className="youtube-wrapper flex flex-wrap justify-center gap-6 w-full">
-              {sortedVideos.map((video, idx) => (
+              {filteredVideos.map((video, idx) => (
                 <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }} key={video.url+idx}>
                   <iframe
                     src={video.url}
-                    title={video.title}
+                    title={resolveLocalized(video.title) || video.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     style={{ width: '100%', height: '280px', borderRadius: '12px', border: 'none' }}
                   ></iframe>
                   <div style={{ marginTop: 8, textAlign: 'center' }}>
-                    <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{video.title}</div>
-                    <div className="text-sm text-gray-500">{video.date} | {video.genre.join(", ")}</div>
+                    <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{resolveLocalized(video.title)}</div>
+                    <div className="text-sm text-gray-500">{video.date} | {video.genre.join(", ")} |&nbsp;
+                      {findLyricSlugForTitle(video.title) && (
+                        <a href={`/#/lyrics/${findLyricSlugForTitle(video.title)}`} className="text-blue-500 hover:underline" rel="noopener noreferrer">
+                          {texts.contentsLyricsLink || 'View Lyrics'}
+                        </a>)}</div>
                   </div>
                 </div>
               ))}
@@ -117,14 +144,6 @@ export default function Contents({ texts }) {
             {(() => {
               const items = (texts.contentsStreaming && texts.contentsStreaming.length > 0) ? texts.contentsStreaming : [
                 {
-                  image: process.env.PUBLIC_URL + '/images/サムネ.png',
-                  title: 'Sample Album',
-                  author: 'Kuma J Sato',
-                  tracks: ['Track A', 'Track B', 'Track C'],
-                  year: '2025',
-                  spotify: 'https://open.spotify.com/',
-                  apple: 'https://music.apple.com/',
-                  other: ''
                 }
               ];
               return (

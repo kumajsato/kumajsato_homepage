@@ -16,11 +16,12 @@ const ja = {
   latestNews: [
     { date: "2025/09/01", content: "『カミサマコーリング feat. 知声』公開しました" }
     ,{ date: "2025/10/11", content: "ホームページを公開しました" }
-    ,{ date: "2025/10/26", content: "音系・メディアミックス同人即売会 [M3]<a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>【E-02a】</strong></a>に出展予定！" }
-    ,{ date: "2025/11/29", content: "ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！" }
+    ,{ date: "2025/10/26", content: `音系・メディアミックス同人即売会 [M3]<a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>【E-02a】</strong></a>に出展予定！` }
+    ,{ date: "2025/11/29", content: `ボーカロイドonly event「THE VOC@LOiD M@STER６１」<strong>【F08】</strong>にて出展予定！` }
     ,{ date: "2025/10/15", content: "M3、ボーマスにて頒布するCD『アイムタフ feat. 知声 - EP』の情報を公開しました。" }
     ,{ date: "2025/10/27", content: "<a href='/#/blog/m3-autumn-2025'>M3秋2025出展報告</a>をブログに追加しました。" }
     ,{ date: "2025/10/27", content: "『アイムタフ！ feat. 知声 - EP』のストリーミング配信リンクを追加しました。" }
+    ,{ date: "2025/10/27", content: "各作品の歌詞情報をこちらのHPで確認できるようにしました。" }
   ],
 
   // Contents-related
@@ -32,6 +33,8 @@ const ja = {
     streamingIcon: "fa-solid fa-compact-disc",
     other: "Streaming"
   },
+  // label for lyrics link in Contents MV list
+  contentsLyricsLink: "歌詞",
   contentsTracksLabel: "-収録楽曲-",
   // Streaming / album data for Contents page (managed in locale)
   contentsStreaming: [

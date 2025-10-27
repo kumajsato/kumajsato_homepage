@@ -98,7 +98,7 @@ export default function Blog({ texts }) {
                   </div>
                 </div>
 
-                <aside className="blog-list" style={{ display: 'flex', flexWrap: 'wrap', gap: 24, justifyContent: 'center', width: '100%' }}>
+                <aside className="blog-list" style={{ display: 'flex', flexWrap: 'wrap', gap: 24, justifyContent: 'flex-start', width: '100%' }}>
                   {posts
                     .filter(p => !selectedTag || (p.tags || []).includes(selectedTag))
                     .slice()
@@ -109,7 +109,7 @@ export default function Blog({ texts }) {
                     })
                     .map(p => (
                       <div key={p.slug} className={`youtube-video blog-list-item`} style={{ maxWidth: 500, width: '100%', cursor: 'pointer' }} onClick={() => navigate(`/blog/${p.slug}`)}>
-                        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: 12, borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: 12, borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.06)', width: '100%', boxSizing: 'border-box' }}>
                           {p.thumbnail ? (
                             <img src={p.thumbnail} alt={p.title} style={{ width: 160, height: 160, objectFit: 'cover', borderRadius: 8, flex: '0 0 160px' }} />
                           ) : (
@@ -130,7 +130,7 @@ export default function Blog({ texts }) {
             {/* Detail view */}
             {slug && (
               <article className="blog-content" style={{ flex: '1 1 100%', maxWidth: 1000, minWidth: 320, margin: '0 auto' }}>
-                <div className="markdown-article" style={{ padding: 16, borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                <div className="markdown-article" style={{ padding: '2em 5em', borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
                   {/* Title and meta: title and (date+tags) in separate flex boxes; overall flex becomes column on narrow screens */}
                   <div className="blog-header-flex" style={{ display: 'flex', flexDirection: isNarrow ? 'column' : 'row', alignItems: isNarrow ? 'flex-start' : 'center', gap: 12, marginBottom: 12 }}>
                     <div className="blog-title-box" style={{ flex: '1 1 auto' }}>

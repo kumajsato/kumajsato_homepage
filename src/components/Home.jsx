@@ -58,6 +58,17 @@ export function LogoSVG(props) {
 }
 
 export default function Home({ texts }) {
+  // helper: resolve localized field that may be a string or an object {ja,en}
+  const resolveLocalized = (val) => {
+    if (val == null) return '';
+    if (typeof val === 'string') return val;
+    if (typeof val === 'object') {
+      const isJapanese = navigator.language.startsWith('ja');
+      if (isJapanese) return val.ja || val.jp || val['日本語'] || val.en || Object.values(val)[0] || '';
+      return val.en || val['en-US'] || val.ja || Object.values(val)[0] || '';
+    }
+    return String(val);
+  };
   useEffect(() => {
     const isJapanese = navigator.language.startsWith('ja');
     document.title = isJapanese ? texts.navButtons[0].label + ' | 佐藤くま' : texts.navButtons[0].label + ' | Kuma J Sato';
@@ -105,7 +116,7 @@ export default function Home({ texts }) {
   const latestNewsSorted = texts.latestNews
     .slice()
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+    .slice(0, 5);
 
   return (
     <div className="main-container flex flex-col min-h-screen">
@@ -135,13 +146,13 @@ export default function Home({ texts }) {
           <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }}>
             <iframe
               src={pickup_video.url}
-              title={pickup_video.title}
+              title={`${resolveLocalized(pickup_video.title) || pickup_video.title} - video`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               style={{ width: '100%', height: '280px', borderRadius: '12px', border: 'none' }}
             ></iframe>
             <div style={{ marginTop: 8, textAlign: 'center' }}>
-              <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{pickup_video.title}</div>
+              <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{resolveLocalized(pickup_video.title)}</div>
               <div className="text-sm text-gray-500">{pickup_video.date} | {pickup_video.genre.join(", ")}</div>
             </div>
           </div>
@@ -154,13 +165,13 @@ export default function Home({ texts }) {
           <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }}>
             <iframe
               src={videos[videos.length-1].url}
-              title={videos[videos.length-1].title}
+              title={`${resolveLocalized(videos[videos.length-1].title) || videos[videos.length-1].title} - video`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               style={{ width: '100%', height: '280px', borderRadius: '12px', border: 'none' }}
             ></iframe>
             <div style={{ marginTop: 8, textAlign: 'center' }}>
-              <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{videos[videos.length-1].title}</div>
+              <div className="font-bold text-base" style={{ fontWeight: 'bold' }}>{resolveLocalized(videos[videos.length-1].title)}</div>
               <div className="text-sm text-gray-500">{videos[videos.length-1].date} | {videos[videos.length-1].genre.join(", ")}</div>
             </div>
           </div>

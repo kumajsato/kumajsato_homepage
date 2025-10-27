@@ -17,7 +17,10 @@ const en = {
     { date: "2025/09/01", content: "'God's Calling feat. Chis-A' has been released." },
     { date: "2025/10/11", content: "Homepage published." },
     { date: "2025/10/26", content: "Scheduled to exhibit at M3 <a href='https://catalog.m3net.jp/2025f/circles.html?circleId=560308' target='_blank'><strong>[E-02a]</strong></a>!" },
-    { date: "2025/10/15", content: "CD 'I'm Tough feat. Chis-A - EP' info for M3 and THE VOC@LOiD M@STER published." }
+    { date: "2025/10/15", content: "CD 'I'm Tough feat. Chis-A - EP' info for M3 and THE VOC@LOiD M@STER published." },
+    { date: "2025/10/27", content: "<a href='/#/blog/m3-autumn-2025'>M3 Autumn 2025 exhibition report</a> added to the blog." },
+    { date: "2025/10/27", content: "Streaming links for 'I'm Tough! feat. Chis-A - EP' have been added." },
+    { date: "2025/11/29", content: "Scheduled to exhibit at Vocaloid-only event 'THE VOC@LOiD M@STER 61' <strong>[F08]</strong>!" }
   ],
 
   // Contents-related
@@ -29,35 +32,41 @@ const en = {
     streamingIcon: "fa-solid fa-compact-disc",
     other: "Streaming"
   },
+  // label for lyrics link in Contents MV list
+  contentsLyricsLink: "Lyrics",
   contentsTracksLabel: "-Tracks-",
-
-  // Lyrics page label/icon (not part of navButtons)
-  lyricsSection: {
-    label: "Lyrics",
-    icon: "fa-solid fa-pen-nib"
-  },
 
   // Streaming / album data for Contents page
   contentsStreaming: [
     {
+      image: process.env.PUBLIC_URL + '/images/cd_jacket/uni.png',
+      title: "Uni feat. HatsuneMiku, Chis-A - EP",
+      author: "Kuma J Sato",
+      tracks: ["Fiction feat. Hatsune Miku", "Uni feat. Hatsune Miku, Chis-A", "Kid feat. Hatsune Miku", "Tokyo Simulator feat. Chis-A"],
+      year: "2022",
+      spotify: "https://open.spotify.com/intl-ja/album/3H55VpG1vkT1ewFa3rF1Sl",
+      apple: "https://music.apple.com/jp/album/uni-feat-hatsunemiku-chis-a-ep/1654591450",
+      other: "https://nodee.net/a/6pvadib5"
+    },
+    {
       image: process.env.PUBLIC_URL + '/images/cd_jacket/coinlaundry.png',
-      title: 'The End of the World and Laundromat',
+      title: 'The End of the World and Laundromats feat. Chis-A - EP',
       author: 'Kuma J Sato',
-      tracks: ['Track A', 'Track B', 'Track C'],
+      tracks: ["Minikui Hoshi no Ko feat. Chis-A", "Boku no Sato feat. Chis-A", "The End of the World and Laundromats feat. Chis-A", "The Song for Someone feat. Chis-A"],
       year: '2023',
-      spotify: 'https://open.spotify.com/',
-      apple: 'https://music.apple.com/',
-      other: 'https://kumajsato.booth.pm/'
+      spotify: "https://open.spotify.com/intl-ja/album/2iblpC4ZTXBSRUyQn1lT50",
+      apple: "https://music.apple.com/jp/album/the-end-of-the-world-and-laundromats-ep/1719236307",
+      other: "https://nodee.net/a/jzw0bs86"
     },
     {
       image: process.env.PUBLIC_URL + '/images/cd_jacket/imtough.png',
       title: "I'm Tough feat. Chis-A - EP",
       author: 'Kuma J Sato',
-      tracks: ["I'm Tough!", 'B-side 1', 'B-side 2'],
+      tracks: ["Moonlight just isn't enough feat. Chis-A", "Kuchidake feat. Chis-A", "God's Calling feat. Chis-A", "I'm Tough! feat. Chis-A"],
       year: '2025',
-      spotify: 'https://open.spotify.com/',
-      apple: 'https://music.apple.com/',
-      other: 'https://kumajsato.booth.pm/'
+      spotify: "https://open.spotify.com/intl-ja/album/25hCALKh3hBdjLqqdQrlzN",
+      apple: "https://music.apple.com/jp/album/im-tough-feat-chis-a-ep/1847800703",
+      other: "https://nodee.net/a/e1w9ecnyx8h2"
     }
   ],
 
@@ -73,7 +82,7 @@ const en = {
         Born on October 11, 1996 in Tokyo.<br>
         Started producing music mainly EDM at age 20, influenced by Avicii, Marshmello, and Skrillex.<br>
         Released first VOCALOID song 'Fiction feat. Hatsune Miku' at age 25.<br>
-        Inspired by the voice of Voisona's 'Chis-A', continues activities as a Vocaloid producer.<br>
+        Deeply moved by Voisona's voice 'Chis-A', continues activities as a Vocaloid producer.<br>
         Distributes CDs at doujin music events such as 'M3' and Vocaloid-only events like 'THE VOC@LOiD M@STER'.
       `
     },

@@ -1,14 +1,133 @@
 [
   {
-    "title": "フィクション feat. 初音ミク",
+    "title": { "ja": "フィクション feat. 初音ミク", "en": "Fiction feat. HatsuneMiku" },
     "slug": "fiction",
     "thumbnail": "/images/サムネ.png",
-    "youtube": "https://www.youtube.com/embed/80QI2RC7-PM"
+    "youtube": "https://www.youtube.com/embed/80QI2RC7-PM",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "無色透名祭"},
+    "date": "2022/08/13"
   },
   {
-    "title": "ユニ feat. 初音ミク, 知声",
+    "title": { "ja": "ユニ feat. 初音ミク, 知声", "en": "Uni feat. HatsuneMiku, Chis-A" },
     "slug": "uni",
     "thumbnail": "/images/サムネ.png",
-    "youtube": "https://www.youtube.com/embed/HQv6P9Ujpzw"
+    "youtube": "https://www.youtube.com/embed/HQv6P9Ujpzw",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "The VOCALOID Collection - 2022 Summer - ", "en": "The VOCALOID Collection - 2022 Summer - " },
+    "date": "2022/10/09"
+  },
+  {
+    "title": { "ja": "僕の郷 feat. 知声", "en": "Boku no Sato feat. Chis-A" },
+    "slug": "bokunosato",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/5BFT27Fe6TU",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "イラスト統一祭～ふかみ祭～"},
+    "date": "2023/06/17"
+  },
+  {
+    "title": { "ja": "アイムタフ！ feat. 知声", "en": "I'm Tough! feat. Chis-A" },
+    "slug": "imtough",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/NlkQWj8gtWw",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "illust": { "ja": "浅香_", "en": "浅香_" },
+    "event": { "ja": "The VOCALOID Collection - 2025 Winter - ", "en": "The VOCALOID Collection - 2025 Winter - " },
+    "date": "2025/02/24"
+  },
+  {
+    "title": { "ja": "カミサマコーリング feat. 知声", "en": "God's Calling feat. Chis-A" },
+    "slug": "kamisamacalling",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/GkPwlH5uRes",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "illust" :{ "ja": "福来まる", "en": "福来まる" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "date": "2025/09/01"
+  },
+  {
+    "title": { "ja": "クチダケ feat. 知声", "en": "Kuchidake feat. Chis-A" },
+    "slug": "kuchidake",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/sqaKnJG7Iww",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "date": "2024/12/23"
+  },
+  {
+    "title": { "ja": "みにくいほしのこ feat. 知声", "en": "Minikui Hoshi no Ko feat. Chis-A" },
+    "slug": "minikuihoshinoko",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/5GaIMHYLwf8",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "The VOCALOID Collection - 2023 Spring - ", "en": "The VOCALOID Collection - 2023 Spring - " },
+    "date": "2023/03/18"
+  },
+  {
+    "title": { "ja": "世界の終わりとコインランドリー feat. 知声", "en": "The End of the World and Laundromat feat. Chis-A" },
+    "slug": "sekainoowaritocoinlaundry",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/-PmUTd8UWzE",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "The VOCALOID Collection - 2023 Summer - ", "en": "The VOCALOID Collection - 2023 Summer - " },
+    "date": "2023/08/04"
+  },
+  {
+    "title": { "ja": "トーキョーシミュレーター feat. 知声", "en": "Tokyo Simulator feat. Chis-A" },
+    "slug": "tokyosimulator",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/xCUPh-FGJ1A",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "The VOCALOID Collection - 2022 Autumn - ", "en": "The VOCALOID Collection - 2022 Autumn - " },
+    "date": "2022/10/09"
+  },
+  {
+    "title": { "ja": "月明かりじゃ物足んない feat. 知声", "en": "Moonlight just isn't enough feat. Chis-A" },
+    "slug": "tsukiakarijamonotannai",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/_VWyLgYY9gU",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "date": "2024/04/25"
+  },
+  {
+    "title": { "ja": "誰かのための歌 feat. 知声", "en": "The Song for Someone feat. Chis-A" },
+    "slug": "darekanotamenouta",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/e_Z5HnUAMa0",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "無色透名祭Ⅱ"},
+    "date": "2023/11/06"
+  },
+  {
+    "title": { "ja": "シロ feat. 知声", "en": "Shiro feat. Chis-A" },
+    "slug": "shiro",
+    "thumbnail": "/images/サムネ.png",
+    "youtube": "https://www.youtube.com/embed/qlVuoNXzUBc",
+    "author": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "lyricist": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "movie": { "ja": "佐藤くま", "en": "Kuma J Sato" },
+    "event": { "ja": "イラスト統一祭～ゴマヒチ祭～"},
+    "date": "2023/12/16"
   }
 ]
