@@ -774,6 +774,12 @@ a:hover {
   border-radius: 6px;
 }
 
+.markdown-article p {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+
 /* blog list thumbnail: same size as streaming jacket on desktop, full width on small screens */
 .blog-list img {
   width: 160px;
