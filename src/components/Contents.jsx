@@ -117,7 +117,7 @@ export default function Contents({ texts }) {
               {filteredVideos.map((video, idx) => (
                 <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }} key={video.url+idx}>
                   <iframe
-                    src={video.url}
+                    src={`${video.url}?enablejsapi=1`}
                     title={resolveLocalized(video.title) || video.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

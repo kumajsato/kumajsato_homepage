@@ -145,7 +145,7 @@ export default function Home({ texts }) {
         <div className="youtube-wrapper" style={{ justifyContent: 'center' }}>
           <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }}>
             <iframe
-              src={pickup_video.url}
+              src={`${pickup_video.url}?enablejsapi=1`}
               title={`${resolveLocalized(pickup_video.title) || pickup_video.title} - video`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -164,7 +164,7 @@ export default function Home({ texts }) {
         <div className="youtube-wrapper" style={{ justifyContent: 'center' }}>
           <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }}>
             <iframe
-              src={videos[videos.length-1].url}
+              src={`${videos[videos.length-1].url}?enablejsapi=1`}
               title={`${resolveLocalized(videos[videos.length-1].title) || videos[videos.length-1].title} - video`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
