@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -8,7 +8,6 @@ import { Header, Footer } from './Home';
 export default function Blog({ texts }) {
   const [posts, setPosts] = useState([]);
   const [content, setContent] = useState('');
-  const navigate = useNavigate();
   const { slug } = useParams();
 
   // find blog nav button from locale navButtons array (fallbacks included)
@@ -119,8 +118,8 @@ export default function Blog({ texts }) {
                       return sortOrder === 'desc' ? db - da : da - db;
                     })
                     .map(p => (
-                      <div key={p.slug} className={`youtube-video blog-list-item`} style={{ maxWidth: 500, width: '100%', cursor: 'pointer' }} onClick={() => navigate(`/blog/${p.slug}`)}>
-                        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: 12, borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.06)', width: '100%', boxSizing: 'border-box' }}>
+                      <a key={p.slug} href={`/#/blog/${p.slug}`} className={`youtube-video blog-list-item`} style={{ maxWidth: 500, width: '100%', textDecoration: 'none', color: 'inherit' }}>
+                        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: 12, borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.06)', width: '100%', boxSizing: 'border-box', cursor: 'pointer' }}>
                           {p.thumbnail ? (
                             <img src={p.thumbnail} alt={p.title} style={{ width: 160, height: 160, objectFit: 'cover', borderRadius: 8, flex: '0 0 160px' }} />
                           ) : (
@@ -132,7 +131,7 @@ export default function Blog({ texts }) {
                             <div className="blog-excerpt" style={{ }}>{p.excerpt}</div>
                           </div>
                         </div>
-                      </div>
+                      </a>
                     ))}
                 </aside>
               </div>
