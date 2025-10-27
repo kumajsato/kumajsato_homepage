@@ -15,14 +15,20 @@ export default function Contents({ texts }) {
   const [selectedGenre, setSelectedGenre] = useState(null);
   // タブ状態（'videos' or 'streaming'）
   const [activeTab, setActiveTab] = useState('videos');
+  // video sort state (newest/oldest)
+  const [sortOrder, setSortOrder] = useState('desc'); // 'desc' = newest first
 
   // フィルタ
   let filteredVideos = videos;
   if (selectedGenre) {
     filteredVideos = filteredVideos.filter(v => v.genre.includes(selectedGenre));
   }
-  // デフォルトでリストの後ろから（新しい順）表示
-  filteredVideos = filteredVideos.slice().reverse();
+  // ソート（dateフィールドがある場合に利用）
+  const sortedVideos = filteredVideos.slice().sort((a, b) => {
+    const da = new Date(a.date || 0).getTime();
+    const db = new Date(b.date || 0).getTime();
+    return sortOrder === 'desc' ? db - da : da - db;
+  });
 
   return (
     <div className="main-container flex flex-col min-h-screen">
@@ -68,17 +74,24 @@ export default function Contents({ texts }) {
         {activeTab === 'videos' && (
           <>
             {/* ジャンル選択ボタン */}
-            <div style={{ marginBottom: 24, display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-              {allGenres.map(genre => (
-                <button
-                  key={genre}
-                  className={`genre-toggle-btn${selectedGenre === genre ? ' active' : ''}`}
-                  onClick={() => setSelectedGenre(selectedGenre === genre ? null : genre)}
-                >{genre}</button>
-              ))}
+            <div style={{ marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', maxWidth: 1024, gap: 12 }}>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
+                {allGenres.map(genre => (
+                  <button
+                    key={genre}
+                    className={`genre-toggle-btn${selectedGenre === genre ? ' active' : ''}`}
+                    onClick={() => setSelectedGenre(selectedGenre === genre ? null : genre)}
+                  >{genre}</button>
+                ))}
+              </div>
+              <div style={{ marginLeft: 'auto' }}>
+                <button className="tab-btn" onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')} aria-label="Toggle video sort" title={sortOrder === 'desc' ? 'Newest first' : 'Oldest first'}>
+                  <i className={`fa-solid ${sortOrder === 'desc' ? 'fa-sort-amount-down' : 'fa-sort-amount-up'}`} aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
             <div className="youtube-wrapper flex flex-wrap justify-center gap-6 w-full">
-              {filteredVideos.map((video, idx) => (
+              {sortedVideos.map((video, idx) => (
                 <div className="youtube-video" style={{ maxWidth: 500, width: '100%' }} key={video.url+idx}>
                   <iframe
                     src={video.url}

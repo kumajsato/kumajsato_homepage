@@ -597,6 +597,67 @@ a:hover {
     background: rgba(255,255,255,0.04);
     color: #e6e6e6;
   }
+
+  /* Blog-specific dark mode adjustments */
+  .blog-page,
+  .blog-grid,
+  .blog-list,
+  .blog-content {
+    color: #e6e6e6;
+  }
+
+  /* cards for list items use the same dark card style as streaming-card */
+  .blog-list .youtube-video > div,
+  .markdown-article,
+  .blog-empty {
+    background: #333;
+    border: 1px solid #2b2b2b;
+    color: #e6e6e6;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+
+  .blog-list .youtube-video {
+    /* ensure clickable card wrapper doesn't change background */
+    background: transparent;
+  }
+
+  .blog-title {
+    color: #ffffff;
+  }
+  .blog-date {
+    color: #bdbdbd;
+  }
+  .blog-excerpt {
+    color: #cfcfcf;
+  }
+
+  /* markdown content tweaks */
+  .markdown-article a {
+    color: #90caf9;
+  }
+  .markdown-article pre,
+  .markdown-article code {
+    background: #0f1112;
+    color: #f2f2f2;
+    border-radius: 6px;
+    padding: 6px;
+  }
+  .markdown-article blockquote {
+    border-left: 4px solid #2b2b2b;
+    color: #d0d0d0;
+    background: rgba(255,255,255,0.02);
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+  /* scrollbars for markdown/article */
+  .markdown-article::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+  }
+  .markdown-article {
+    scrollbar-color: rgba(255,255,255,0.08) transparent;
+  }
 }
 
 /* ==========================
@@ -703,4 +764,116 @@ a:hover {
     margin-bottom: 8px;
     font-size: 150%;
   }
+}
+
+/* markdown article images: responsive within article */
+.markdown-article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* blog list thumbnail: same size as streaming jacket on desktop, full width on small screens */
+.blog-list img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 750px) {
+  .blog-list img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Blog post meta row: horizontal on wide screens, vertical on small screens */
+.blog-meta-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.blog-date {
+  color: #6b7280;
+  font-weight: 600;
+  min-width: 120px;
+}
+.blog-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.blog-tag {
+  background: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+/* new: percentage layout for title/date/tags on wide screens */
+.blog-meta-row {
+  flex-wrap: nowrap;
+  gap: 0; /* remove gap between columns as requested */
+}
+/* Title should expand/contract to fill available space */
+.blog-title-main {
+  flex: 1 1 58%; /* allow grow and shrink, base 58% */
+  max-width: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+}
+/* Date and tags keep their base percentages but may shrink; ensure minimum widths for readability */
+.blog-date {
+  flex: 0 1 10%;
+  min-width: 70px;
+  text-align: left;
+}
+.blog-tags {
+  flex: 0 1 30%;
+  min-width: 150px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 500px) {
+  .blog-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap:0.8em;
+  }
+  .blog-title-main {
+    flex: 1 1 58%; /* allow grow and shrink, base 58% */
+    max-width: 100%;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+/* Date and tags keep their base percentages but may shrink; ensure minimum widths for readability */
+  .blog-date {
+    flex: 0 1 100%;
+    max-width: 100%;
+    min-width: 70px;
+    text-align: left;
+  }
+  .blog-tags {
+    flex: 0 1 100%;
+    max-width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* Markdown content images (blog / lyrics) - cap size and center */
+.markdown-article img,
+.markdown-article p img {
+  display: block;
+  max-width: 500px; /* never exceed 500px */
+  width: 100%;      /* shrink to container when needed */
+  height: auto;
+  border-radius: 8px;
 }

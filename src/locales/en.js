@@ -4,7 +4,8 @@ const en = {
     { label: "Home", link: "/", icon: "fa-solid fa-house" },
     { label: "Contents", link: "/contents", icon: "fa-solid fa-film" },
     { label: "About Me", link: "/aboutme", icon: "fa-solid fa-user" },
-    { label: "Links", link: "/links", icon: "fa-solid fa-link" }
+    { label: "Links", link: "/links", icon: "fa-solid fa-link" },
+    { label: "Blog", link: "/blog", icon: "fa-solid fa-blog" }
   ],
 
   // Home-related
@@ -29,6 +30,12 @@ const en = {
     other: "Streaming"
   },
   contentsTracksLabel: "-Tracks-",
+
+  // Lyrics page label/icon (not part of navButtons)
+  lyricsSection: {
+    label: "Lyrics",
+    icon: "fa-solid fa-pen-nib"
+  },
 
   // Streaming / album data for Contents page
   contentsStreaming: [

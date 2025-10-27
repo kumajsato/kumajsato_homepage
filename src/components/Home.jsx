@@ -5,7 +5,7 @@ import videos, { pickup_video } from "../videos";
 export function Header({ texts }) {
   return (
     <header className="w-full flex flex-col items-center py-8">
-      <div style={{ width: '75%', maxWidth: 420, margin: '0 auto', padding: '2% 0', pointerEvents: 'none' }}>
+      <div style={{ width: '75%', maxWidth: 420, margin: '0 auto', padding: '2em 0', pointerEvents: 'none' }}>
         <Link to="/" style={{ display: 'block', pointerEvents: 'auto', margin: '0 10%' }}>
           <LogoSVG style={{ width: '100%', maxWidth: 250, minWidth: 80, display: 'block', margin: '0 auto' }} />
         </Link>
