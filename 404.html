@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <title>Redirecting...</title>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
-    <title>Redirecting...</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="/src/global.css" />
     <style>
-      body { font-family: 'Segoe UI', 'Meiryo', sans-serif; margin:0; padding:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:#111; color:#fff }
-      .redirect-box { max-width:640px; padding:24px; background:#222; border-radius:12px; text-align:center; }
-      a { color:#90caf9 }
+      body {
+        background: #222;
+        color: #eee;
+        text-align: center;
+        font-family: 'Segoe UI', 'Meiryo', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .redirect-box {
+        background: #333;
+        color: #fff;
+        border-radius: 16px;
+        padding: 32px 24px;
+        box-shadow: 0 2px 16px #111;
+        border: 2px solid #444;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      a {
+        color: #90caf9;
+      }
+      a:hover {
+        color: #ffb74d;
+      }
     </style>
   </head>
   <body>
     <div class="redirect-box">
-      <h1>ページを読み込んでいます…</h1>
-      <p>お使いのブラウザでJavaScriptが有効であれば自動的にページを表示します。<br>有効でない場合は <a href="/">ホームへ戻る</a> をクリックしてください。</p>
+      <h1 style="font-size:2rem; margin-bottom:1rem;">404 Not Found</h1>
+      <p>ページが見つかりませんでした。<br>自動的に <a href="/">ホームページ</a> へ移動します。</p>
     </div>
-
-    <script>
-      // SPA-friendly 404 for GitHub Pages: fetch index.html, inject a small script to restore original path
-      (function(){
-        var originalPath = location.pathname + location.search + location.hash;
-        // fetch the real index.html
-        fetch('/index.html')
-          .then(function(r){ if(!r.ok) throw new Error('index fetch failed'); return r.text(); })
-          .then(function(html){
-            // inject a script at the start of <head> that sets the history to the original path
-            // avoid closing </script> sequence inside the string by splitting it
-            var injected = html.replace('<head>', '<head><script>history.replaceState(null, null, ' + JSON.stringify(originalPath) + ');</scr' + 'ipt>');
-            document.open();
-            document.write(injected);
-            document.close();
-          })
-          .catch(function(){
-            // fallback: redirect to home
-            location.replace('/');
-          });
-      })();
-    </script>
   </body>
 </html>
