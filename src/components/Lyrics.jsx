@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -10,9 +10,6 @@ export default function Lyrics({ texts }) {
   const [content, setContent] = useState('');
   const navigate = useNavigate();
   const { slug } = useParams();
-
-  // get localized section label/icon for Lyrics (not in navButtons)
-  const lyricsSection = texts && texts.lyricsSection ? texts.lyricsSection : null;
 
   useEffect(() => {
     fetch('/lyrics/lyrics.json')
@@ -52,7 +49,7 @@ export default function Lyrics({ texts }) {
   const metaKeys = ['composer', 'author', 'lyricist', 'arranger', 'mixing', 'illust', 'movie', 'date', 'event'];
 
   // helper to resolve localized field: accepts either a string or an object like {ja: '日本語', en: 'English'}
-  const resolveLocalized = (obj) => {
+  const resolveLocalized = useCallback((obj) => {
     if (obj == null) return null;
     if (typeof obj === 'string') return obj;
     if (typeof obj === 'object') {
@@ -60,7 +57,7 @@ export default function Lyrics({ texts }) {
       return obj.en || obj['en-US'] || obj.ja || Object.values(obj)[0];
     }
     return String(obj);
-  };
+  }, [isJapanese]);
 
   const currentMeta = currentItem
     ? metaKeys
@@ -95,7 +92,7 @@ export default function Lyrics({ texts }) {
     } else if (texts && texts.navButtons && texts.navButtons[0]) {
       document.title = `${texts.navButtons[0].label} | ${isJapanese ? '佐藤くま' : 'Kuma J Sato'}`;
     }
-  }, [slug, currentItem, texts]);
+  }, [slug, currentItem, texts, resolveLocalized]);
 
   return (
     <div className="main-container flex flex-col min-h-screen">
