@@ -22,6 +22,8 @@ const ja = {
     ,{ date: "2025/10/27", content: "<a href='/#/blog/m3-autumn-2025'>M3秋2025出展報告</a>をブログに追加しました。" }
     ,{ date: "2025/10/27", content: "『アイムタフ！ feat. 知声 - EP』のストリーミング配信リンクを追加しました。" }
     ,{ date: "2025/10/27", content: "各作品の歌詞情報をこちらのHPで確認できるようにしました。" }
+    ,{ date: "2025/12/01", content: "<a href='https://kumajsato.booth.pm/items/7706848' target='_blank'>BOOTHにて、『アイムタフ！ feat. 知声 - EP』の通販を開始いたしました。</a>" }
+    ,{ date: "2025/12/01", content: "<a href='/#/blog/vomas-61'>ボーマス61出展報告</a>をブログに追加しました。" }
   ],
 
   // Contents-related
